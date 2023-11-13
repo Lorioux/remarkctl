@@ -1,0 +1,4 @@
+[submodule "kitabus"]
+	path = kitabus
+	url = ../../lorioux/kitabus.git
+	branch = main
