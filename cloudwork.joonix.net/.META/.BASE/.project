@@ -1,0 +1,167 @@
+{
+	"instances": [
+		{
+			"attributes": {
+				"auto_create_network": true,
+				"billing_account": null,
+				"effective_labels": {},
+				"folder_id": "",
+				"id": "projects/azure-lab-382116",
+				"labels": {},
+				"name": "Azure Lab",
+				"number": "126904696331",
+				"org_id": "522089339064",
+				"project_id": "azure-lab-382116",
+				"skip_delete": null,
+				"terraform_labels": {},
+				"timeouts": {
+					"create": null,
+					"delete": null,
+					"read": null,
+					"update": null
+				}
+			},
+			"index_key": "azure-lab-382116",
+			"private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJyZWFkIjo2MDAwMDAwMDAwMDAsInVwZGF0ZSI6NjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+			"schema_version": 1,
+			"sensitive_attributes": []
+		},
+		{
+			"attributes": {
+				"auto_create_network": true,
+				"billing_account": "01945A-35948D-6E980C",
+				"effective_labels": {},
+				"folder_id": "",
+				"id": "projects/cw-prod-audit-logs-000",
+				"labels": {},
+				"name": "cw-prod-audit-logs-000",
+				"number": "821953658238",
+				"org_id": "522089339064",
+				"project_id": "cw-prod-audit-logs-000",
+				"skip_delete": null,
+				"terraform_labels": {},
+				"timeouts": {
+					"create": null,
+					"delete": null,
+					"read": null,
+					"update": null
+				}
+			},
+			"index_key": "cw-prod-audit-logs-000",
+			"private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJyZWFkIjo2MDAwMDAwMDAwMDAsInVwZGF0ZSI6NjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+			"schema_version": 1,
+			"sensitive_attributes": []
+		},
+		{
+			"attributes": {
+				"auto_create_network": true,
+				"billing_account": "01945A-35948D-6E980C",
+				"effective_labels": {},
+				"folder_id": "",
+				"id": "projects/cw-prod-billing-exp-000",
+				"labels": {},
+				"name": "cw-prod-billing-exp-000",
+				"number": "742776124158",
+				"org_id": "522089339064",
+				"project_id": "cw-prod-billing-exp-000",
+				"skip_delete": null,
+				"terraform_labels": {},
+				"timeouts": {
+					"create": null,
+					"delete": null,
+					"read": null,
+					"update": null
+				}
+			},
+			"index_key": "cw-prod-billing-exp-000",
+			"private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJyZWFkIjo2MDAwMDAwMDAwMDAsInVwZGF0ZSI6NjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+			"schema_version": 1,
+			"sensitive_attributes": []
+		},
+		{
+			"attributes": {
+				"auto_create_network": true,
+				"billing_account": "01945A-35948D-6E980C",
+				"effective_labels": {},
+				"folder_id": "",
+				"id": "projects/cw-prod-iac-core-000",
+				"labels": {},
+				"name": "cw-prod-iac-core-000",
+				"number": "781866415910",
+				"org_id": "522089339064",
+				"project_id": "cw-prod-iac-core-000",
+				"skip_delete": null,
+				"terraform_labels": {},
+				"timeouts": {
+					"create": null,
+					"delete": null,
+					"read": null,
+					"update": null
+				}
+			},
+			"index_key": "cw-prod-iac-core-000",
+			"private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJyZWFkIjo2MDAwMDAwMDAwMDAsInVwZGF0ZSI6NjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+			"schema_version": 1,
+			"sensitive_attributes": []
+		},
+		{
+			"attributes": {
+				"auto_create_network": true,
+				"billing_account": null,
+				"effective_labels": {},
+				"folder_id": "",
+				"id": "projects/macro-gadget-384911",
+				"labels": {},
+				"name": "demo",
+				"number": "62233232662",
+				"org_id": "522089339064",
+				"project_id": "macro-gadget-384911",
+				"skip_delete": null,
+				"terraform_labels": {},
+				"timeouts": {
+					"create": null,
+					"delete": null,
+					"read": null,
+					"update": null
+				}
+			},
+			"index_key": "macro-gadget-384911",
+			"private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJyZWFkIjo2MDAwMDAwMDAwMDAsInVwZGF0ZSI6NjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+			"schema_version": 1,
+			"sensitive_attributes": []
+		},
+		{
+			"attributes": {
+				"auto_create_network": true,
+				"billing_account": "01945A-35948D-6E980C",
+				"effective_labels": {
+					"gcp-onboarding-can-delete": "true",
+					"gcp-onboarding-component": "oc-host-project",
+					"gcp-onboarding-host-project-org-id": "522089339064"
+				},
+				"folder_id": "",
+				"id": "projects/onboarding-host-9aaffdb8ae154f",
+				"labels": {},
+				"name": "Onboarding Host Project",
+				"number": "781450716008",
+				"org_id": "522089339064",
+				"project_id": "onboarding-host-9aaffdb8ae154f",
+				"skip_delete": null,
+				"terraform_labels": {},
+				"timeouts": {
+					"create": null,
+					"delete": null,
+					"read": null,
+					"update": null
+				}
+			},
+			"index_key": "onboarding-host-9aaffdb8ae154f",
+			"private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJyZWFkIjo2MDAwMDAwMDAwMDAsInVwZGF0ZSI6NjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+			"schema_version": 1,
+			"sensitive_attributes": []
+		}
+	],
+	"name": "project",
+	"path": "/usr/local/google/home/magido/remarkctl/cloudwork.joonix.net/.META/terraform.tfstate",
+	"type": "google_project"
+}

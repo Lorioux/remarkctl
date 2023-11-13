@@ -1,3 +1,10 @@
 .vscode
 .theia
 .terr*
+vendor
+remarkctl
+
+.kitabus
+.catalogus
+
+cloudw*

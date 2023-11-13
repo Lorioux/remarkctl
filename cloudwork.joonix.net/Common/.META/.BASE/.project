@@ -1,0 +1,111 @@
+{
+	"instances": [
+		{
+			"attributes": {
+				"auto_create_network": true,
+				"billing_account": "01945A-35948D-6E980C",
+				"effective_labels": {},
+				"folder_id": "1080377140689",
+				"id": "projects/logging-ed741-hs351",
+				"labels": {},
+				"name": "logging",
+				"number": "811432953191",
+				"org_id": "",
+				"project_id": "logging-ed741-hs351",
+				"skip_delete": null,
+				"terraform_labels": {},
+				"timeouts": {
+					"create": null,
+					"delete": null,
+					"read": null,
+					"update": null
+				}
+			},
+			"index_key": "logging-ed741-hs351",
+			"private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJyZWFkIjo2MDAwMDAwMDAwMDAsInVwZGF0ZSI6NjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+			"schema_version": 1,
+			"sensitive_attributes": []
+		},
+		{
+			"attributes": {
+				"auto_create_network": true,
+				"billing_account": "01945A-35948D-6E980C",
+				"effective_labels": {},
+				"folder_id": "1080377140689",
+				"id": "projects/monitoring-dev-ed741-hs351",
+				"labels": {},
+				"name": "monitoring-dev",
+				"number": "448518312428",
+				"org_id": "",
+				"project_id": "monitoring-dev-ed741-hs351",
+				"skip_delete": null,
+				"terraform_labels": {},
+				"timeouts": {
+					"create": null,
+					"delete": null,
+					"read": null,
+					"update": null
+				}
+			},
+			"index_key": "monitoring-dev-ed741-hs351",
+			"private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJyZWFkIjo2MDAwMDAwMDAwMDAsInVwZGF0ZSI6NjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+			"schema_version": 1,
+			"sensitive_attributes": []
+		},
+		{
+			"attributes": {
+				"auto_create_network": true,
+				"billing_account": "01945A-35948D-6E980C",
+				"effective_labels": {},
+				"folder_id": "1080377140689",
+				"id": "projects/monitoring-nonprod-ed741-hs351",
+				"labels": {},
+				"name": "monitoring-nonprod",
+				"number": "644686880750",
+				"org_id": "",
+				"project_id": "monitoring-nonprod-ed741-hs351",
+				"skip_delete": null,
+				"terraform_labels": {},
+				"timeouts": {
+					"create": null,
+					"delete": null,
+					"read": null,
+					"update": null
+				}
+			},
+			"index_key": "monitoring-nonprod-ed741-hs351",
+			"private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJyZWFkIjo2MDAwMDAwMDAwMDAsInVwZGF0ZSI6NjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+			"schema_version": 1,
+			"sensitive_attributes": []
+		},
+		{
+			"attributes": {
+				"auto_create_network": true,
+				"billing_account": "01945A-35948D-6E980C",
+				"effective_labels": {},
+				"folder_id": "1080377140689",
+				"id": "projects/monitoring-prod-ed741-hs351",
+				"labels": {},
+				"name": "monitoring-prod",
+				"number": "762433011541",
+				"org_id": "",
+				"project_id": "monitoring-prod-ed741-hs351",
+				"skip_delete": null,
+				"terraform_labels": {},
+				"timeouts": {
+					"create": null,
+					"delete": null,
+					"read": null,
+					"update": null
+				}
+			},
+			"index_key": "monitoring-prod-ed741-hs351",
+			"private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJyZWFkIjo2MDAwMDAwMDAwMDAsInVwZGF0ZSI6NjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+			"schema_version": 1,
+			"sensitive_attributes": []
+		}
+	],
+	"name": "project",
+	"path": "/usr/local/google/home/magido/remarkctl/cloudwork.joonix.net/Common/.META/terraform.tfstate",
+	"type": "google_project"
+}
