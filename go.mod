@@ -1,6 +1,6 @@
 module github.com/lorioux/remarkctl
 
-go 1.22
+go 1.20
 
 replace github.com/lorioux/kitabus v0.0.0 => ./kitabus
 

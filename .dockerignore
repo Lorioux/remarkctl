@@ -6,6 +6,5 @@ remarkctl
 
 cloudw*
 
-*.catalogus
-*.kitabus
-go.work*
+.catalogus
+.kitabus
