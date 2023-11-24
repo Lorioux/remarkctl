@@ -37,7 +37,7 @@ go run . -generate modules --workdir "."
 ### Example using a pre-build docker image
 
 ```bash
-# Set the Environment variable to run the catalogus 
+# Set the Environment variable to run the CATALOGUS 
 export SCOPE="organizations/$(gcloud organizations list --filter 'display_name ~ cloudw' --format 'value(ID)')"
 export KIND=".*Instance"
 export WORKDIR="./:/dataplane"

@@ -6,6 +6,8 @@ remarkctl
 
 cloudw*
 
-*.catalogus
-*.kitabus
+*.CATALOGUS
+*.REMARKUS
 go.work*
+*.META_IMPORT_SIGNATURES
+providers.tf
