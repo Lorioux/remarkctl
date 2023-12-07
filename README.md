@@ -168,12 +168,12 @@ cloudxaxasxs.yyyyyy.zzz                         # Cloud Identity AS-IS
 │   └── Development                             # Folder in the GCP org   
 │       └── xxxxx-dev-net-spoke-yyyyyy          # Project in the GCP org   
 │           └── .ACTIVE                         # Container for Active resources (local Folder)
-│               ├── .BASE
+│               ├
 │               (TRUNCATED)
 ├── Onboarding Host Project
 │   └── .ACTIVE
 │       ├── .BASE
-│       │   └── .subnetwork                     # Configurations base arguments inputs, 
+│       │   └── .subnetwork                     # Configuration base subnetwork attributes inputs. ANY change here imply change on the Terraform managed resource 
 │       ├── compute                             # Compute module
 │       │   └── Subnetwork.tf                   # Subnetwork TF resource definition
 │       ├── compute_module.tf                   # Compute module definition
