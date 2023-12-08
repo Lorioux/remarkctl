@@ -10,13 +10,13 @@ jobs:
   
   build:
     runs-on: ubuntu-latest
-    environment: BUILD_REMARKER_TOKEN
+    environment: BUILD
     env:
-      GITHUB_TOKEN: ${secrets.BUILD_REMARKER_TOKEN}
+      GITHUB_TOKEN: ${{secrets.REMARKER_TOKEN}}
       REMARKER_IMAGE_NAME: "docker.io/${{secrets.DOCKER_USERNAME}}/remarker"
     steps:
     - uses: actions/checkout@v3
-
+      
     # - name: Set up Go
     #   uses: actions/setup-go@v4
     #   with:
