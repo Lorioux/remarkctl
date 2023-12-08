@@ -3,7 +3,7 @@
 .terr*
 vendor
 remarkctl
-./kitabus
+# ./kitabus
 
 cloudw*
 
