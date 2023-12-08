@@ -43,5 +43,5 @@ jobs:
       #   tags: "latest" # ${{ steps.meta.outputs.tags }}
       #   labels: ${{ steps.meta.outputs.labels }}
       run: |
-        docker build --rm --build-arg GITHUB_TOKEN="${{env.GITHUB_TOKEN}}" -t ${{env.REMARKER_IMAGE_NAME}}:latest -f Dockerfile
+        docker buldx build --rm --build-arg GITHUB_TOKEN="${{env.GITHUB_TOKEN}}" -t ${{env.REMARKER_IMAGE_NAME}}:latest .
         docker push ${REMARKER_IMAGE_NAME}:latest
