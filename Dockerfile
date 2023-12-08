@@ -10,7 +10,7 @@ RUN apk --no-cache update \
 && git config --global \
 url."ssh://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_REPO_PATH}".insteadOf \
 "https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_PATH}" \
-&& go mod tidy && go mod vendor
+&& go mod tidy
 RUN --mount=type=cache,target=/root/.cache/go-build \
 CGO_ENABLED=0 go build -a -v -installsuffix cgo -o remarkctl .
 
