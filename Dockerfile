@@ -8,7 +8,7 @@ COPY . .
 RUN apk --no-cache update \ 
 && apk add git \ 
 && git config --global \
-url."https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_REPO_PATH}".insteadOf \
+url."ssh://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_REPO_PATH}".insteadOf \
 "https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_PATH}" \
 && go mod tidy && go mod vendor
 RUN --mount=type=cache,target=/root/.cache/go-build \
