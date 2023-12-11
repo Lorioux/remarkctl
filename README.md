@@ -1,6 +1,6 @@
 # Google Cloud Resources Remarker CTL (WIP)
 
-Remark CTL is a tool to automate the google cloud resources [bulk-]export into terraform (infrastructure as code). The tool helps replicating, side-by-side,  the Google Cloud resource hierarchy. Practitioners could leverage this tool for an accelerated, repeatable, automateable and manageable resource configurations export, and infrastructure updating - while ensuring IaC practice for any Terraform Supported Resources, either by terraform provider google (TPG) or google-beta (TPB). 
+Remark CTL is a tool to automate the google cloud resources [bulk-]export into terraform (infrastructure as code). The tool helps reproduce side-by-side  the Google Cloud resource hierarchy. Practitioners could leverage this tool for an accelerated, repeatable, automateable and manageable resource configurations export, and infrastructure updating - while ensuring IaC practice for any Terraform Supported Resources, either by terraform provider google (TPG) or google-beta (TPB). 
 
 ## Core capabilities
 * Natively integrated with Terraform Plug-in Framework (TPF) only (at least for now)
@@ -22,9 +22,9 @@ When terraform imports resource the states are maintained at the scope of the co
 
 ## Common use case
 * Google Cloud Users, whom are unfamiliar to Google Cloud terraform providers (a.k.a TPG and TPB), may want to start by navigating the Google Cloud Console to provision resources, to accelerate the learn pace and flatten the learning curve, then export all resources into terraform.
-* Google Cloud Users, whom posses multiple unmanaged resources as result of the innovatiion freedom given to their cloud team members, may want to have a central enterprise-wide resources state and inventory at IT leading level.
-* Google Cloud Users, whom posses multiple unmanaged resources, may want to have a central enterprise-wide resources state and inventory before adoption a robust IaC frameworks (such as fabric-fast).
-* Google Cloud Users, whom want to use an automateable, and user-friendly tool as an alternative of the existing `gcloud beta resource-config` *limited to:*
+* Google Cloud Users, whom possess multiple unmanaged resources as result of the innovation freedom given to their cloud team members, may want to have a central enterprise-wide resources state and inventory at IT leading level.
+* Google Cloud Users, whom possess multiple unmanaged resources, may want to have a central enterprise-wide resources state and inventory before adoption a robust IaC frameworks (such as fabric-fast).
+* Google Cloud Users, whom want to use an automatable, and user-friendly tool as an alternative of the existing `gcloud beta resource-config` *limited to:*
 
 ```
 # Currently supported resource types.
@@ -144,33 +144,35 @@ export WORKDIR="./:/dataplane"
 export GCLOUD_AUTH_CMD='gcloud auth login --project $PROJECT_ID --account $GCLOUD_UACC'
 export GCLOUD_UACC='<GOOGLE_CLOUD_USER_ACCOUNT>'
 export REMARKER_IMAGE=<docker.io/devopsxpro/remarker:latest>
-docker run --rm -v $WORKDIR \
--e GCLOUD_UACC="${GCLOUD_UACC}" \
--e KIND="${KIND}" \
--e SCOPE="${SCOPE}" \
--e PROJECT_ID="${PROJECT_ID}" \
--e GCLOUD_AUTH_CMD="${GCLOUD_AUTH_CMD}" \
--e REMARKER_CMD="${REMARKER_CMD}" -it ${REMARKER_IMAGE}:latest
+export REMARKER_CMD=docker run -v $WORKDIR -u 0 --rm $REMARKER_IMAGE  # OR
+# docker run --rm -v $WORKDIR \
+# -e GCLOUD_UACC="${GCLOUD_UACC}" \
+# -e KIND="${KIND}" \
+# -e SCOPE="${SCOPE}" \
+# -e PROJECT_ID="${PROJECT_ID}" \
+# -e GCLOUD_AUTH_CMD="${GCLOUD_AUTH_CMD}" \
+# -e REMARKER_CMD="${REMARKER_CMD}" ${REMARKER_IMAGE}:latest
 ```
 
 ```bash
 # Run this in auto mode
-# export REMARKER_CMD='remarkctl auto --override --scope $SCOPE --kind $KIND'
-# eval $GCLOUD_AUTH_CMD 
+# export REMARKER_CMD='remarkctl auto --override --scope $SCOPE'
+# eval $REMARKER_CMD --kind $KIND
 # OR
 # COPY the binary into your local environment and run
-# cp /usr/bin/remarkctl . && exit
+docker run -v $WORKDIR -u 0 --rm -it $REMARKER_IMAGE  
+cp /usr/bin/remarkctl . && exit
 # 
 # Execute locally
 # remarkctl auto --scope $SCOPE --kind $KIND
 ```
 
-## SAMPLE OUTPUTS
-### Example running the Remark CTL
+## SIDE-BY-SIDE SAMPLE OUTPUTS AT A GLANCE
+### Running the Remark CTL
 ```bash
-# Example output structure - IF I run the 
-remarkctl auto --scope $SCOPE --kind compute.*Subnetwork
-
+# Example output structure - IF I run
+remarkctl auto --scope $SCOPE --kind compute.*Subnetwork #OR
+# eval $REMARKER_CMD --kind compute.*Subnetwork
 ---
 
 cloudxaxasxs.yyyyyy.zzz                         # Cloud Identity AS-IS
@@ -208,11 +210,11 @@ cloudxaxasxs.yyyyyy.zzz                         # Cloud Identity AS-IS
             │   ├── modules
             │   └── providers
             ├── .terraform.lock.hcl
-            ├── terraform.tfstate
+            ├── terraform.tfstate               # Terraform state file
             └── .TF_IMPORT_SIGNATURES           # File containing signatures of terraform resource to import
 ```
 
-### Example running *`gcloud beta resource-config bulk-export`*
+### Running *`gcloud beta resource-config bulk-export`*
 ```bash
 gcloud beta resource-config bulk-export --organization=$ORGID \
 --resource-format=terraform \
