@@ -1,6 +1,6 @@
 # Google Cloud Resources Remarker CTL (WIP)
 
-Remark CTL is a tool to automate the google cloud resources [bulk-]export into terraform (infrastructure as code). The tool helps replicating, side-by-side,  the Google Cloud resource hierarchy. Practitioners could leverage this tool for an accelerated, repeatable, automateable and user-friendly resource configurations export, and infrastructure updating - while ensuring IaC practice for any Terraform Supported Resources, either by terraform provider google (TPG) or google-beta (TPB). 
+Remark CTL is a tool to automate the google cloud resources [bulk-]export into terraform (infrastructure as code). The tool helps replicating, side-by-side,  the Google Cloud resource hierarchy. Practitioners could leverage this tool for an accelerated, repeatable, automateable and manageable resource configurations export, and infrastructure updating - while ensuring IaC practice for any Terraform Supported Resources, either by terraform provider google (TPG) or google-beta (TPB). 
 
 ## Core capabilities
 * Natively integrated with Terraform Plug-in Framework (TPF) only (at least for now)
@@ -22,8 +22,10 @@ When terraform imports resource the states are maintained at the scope of the co
 
 ## Common use case
 * Google Cloud Users, whom are unfamiliar to Google Cloud terraform providers (a.k.a TPG and TPB), may want to start by navigating the Google Cloud Console to provision resources, to accelerate the learn pace and flatten the learning curve, then export all resources into terraform.
-* Google Cloud Users, whom posses multiple unmanaged resources as result of the innovatiion freedom given too their cloud team members, may want to have a central enterprise-wide resources state and inventory at IT leading level.
+* Google Cloud Users, whom posses multiple unmanaged resources as result of the innovatiion freedom given to their cloud team members, may want to have a central enterprise-wide resources state and inventory at IT leading level.
+* Google Cloud Users, whom posses multiple unmanaged resources, may want to have a central enterprise-wide resources state and inventory before adoption a robust IaC frameworks (such as fabric-fast).
 * Google Cloud Users, whom want to use an automateable, and user-friendly tool as an alternative of the existing `gcloud beta resource-config` *limited to:*
+
 ```
 # Currently supported resource types.
 ┌─────────────────────────────┬──────────────┬─────────┬──────┐
