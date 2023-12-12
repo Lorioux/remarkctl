@@ -14,11 +14,9 @@ Remark CTL is a tool to automate the google cloud resources [bulk-]export into t
 * Generate resources's Terraform configurations template
 * Generate resource's state as Terraform states (e.g. Import organization scope resource states)
 
-#### **Attention:**
-----
-```
-When terraform imports resource the states are maintained at the scope of the container node (e.g. org., folder, project) for a specific Google Cloud Resource. For instance, if a project is under the organization/folder node, then its state will be kept in the .META (local folder) under the respective container (directory in the local File System). Similarly, a compute instance state is kept at project level in the .ACTIVE (local folder).  
-```
+|**Attention:**|
+|---|
+|When terraform imports resource the states are maintained at the scope of the container node (e.g. org., folder, project) for a specific Google Cloud Resource. For instance, if a project is under the organization/folder node, then its state will be kept in the .META (local folder) under the respective container (directory in the local File System). Similarly, a compute instance state is kept at project level in the .ACTIVE (local folder).|
 
 ## Common use case
 * Google Cloud Users, whom are unfamiliar to Google Cloud terraform providers (a.k.a TPG and TPB), may want to start by navigating the Google Cloud Console to provision resources, to accelerate the learn pace and flatten the learning curve, then export all resources into terraform.
