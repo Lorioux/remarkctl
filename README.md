@@ -21,9 +21,8 @@ Remark CTL is a tool to automate the google cloud resources [bulk-]export into t
 ## Common use case
 * Google Cloud Users, whom are unfamiliar to Google Cloud terraform providers (a.k.a TPG and TPB), may want to start by navigating the Google Cloud Console to provision resources, to accelerate the learn pace and flatten the learning curve, then export all resources into terraform.
 * Google Cloud Users, whom possess multiple unmanaged resources as result of the innovation freedom given to their cloud team members, may want to have a central enterprise-wide resources state and inventory at IT leading level.
-* Google Cloud Users, whom possess multiple unmanaged resources, may want to have a central enterprise-wide resources state and inventory before adoption a robust IaC frameworks (such as fabric-fast).
-* Google Cloud Users, whom want to use an automatable, and user-friendly tool as an alternative of the existing `gcloud beta resource-config` *limited to:*
-
+* Google Cloud Users, whom possess multiple unmanaged resources, may want to have a central enterprise-wide resources state and inventory before adopting a robust IaC frameworks (such as fabric-fast).
+* Google Cloud Users, whom want to use an automatable, and user-friendly tool as an alternative of the existing `gcloud beta resource-config` *limited (at least for now) to:*
 ```
 # Currently supported resource types.
 ┌─────────────────────────────┬──────────────┬─────────┬──────┐
@@ -78,7 +77,8 @@ There are two ways you can use this tool, either by cloning this repository and 
     1. (*Other*) `roles/ANY_ROLE_AS_REQUIRED_WHEN_RUNNING_THIS_TOOL_AT_THE_FIRST_TIME`
     1. **IF** you want update a *`Terraform`* managed resource, please ensure your have the right permissions.
 * **(Optional) Terraform executable**. *IF* you intend to run from the source code, please ensure you have the latest `terraform binary` installed.
-* **(Optional) Google Cloud SDK**. *IF* you are running locally please install the google cloud sdk and ensure you are authenticated. Also, you will need to config your `gcloud cli` with the right billing project.
+* **Google Cloud SDK**. *IF* you are running locally please install the google cloud sdk and ensure you are authenticated. Also, you will need to config your `gcloud cli` with the right billing project.
+* **Enable Cloud Asset API**. Run `gcloud services enable cloudasset.googleapis.com`
 * **(Optional) Go executable**. *IF* you intend to run from this source code.
 * **Docker executable**. *IF* you are running the pre-build docker image.
 * **(Optional) Repository access token**. *IF* you intend to clone and run from this source code locally, `you will need to request the access token to a private github/lorioux/kitabus repository (at least for now)`. * **NOT Applied IF** * you run the pre-build docker image.
