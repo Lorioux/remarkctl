@@ -72,7 +72,7 @@ There are two ways you can use this tool, either by cloning this repository and 
 * Recommendation: executing through the docker image
 
 ### Pre-requisites
-* **Service Accounts**. Prepare a service account for impersonation and grant the rigth permissions (a.k.a least-privileges).
+* **Service Account**. Prepare a service account for impersonation and grant the rigth permissions (a.k.a least-privileges).
     1. `roles/resourcemanager.organizationViewer`
     1. `roles/cloudasset.viewer`
     1. (*Other*) `roles/ANY_ROLE_AS_REQUIRED_WHEN_RUNNING_THIS_TOOL_AT_THE_FIRST_TIME`
@@ -81,7 +81,7 @@ There are two ways you can use this tool, either by cloning this repository and 
 * **(Optional) Google Cloud SDK**. *IF* you are running locally please install the google cloud sdk and ensure you are authenticated. Also, you will need to config your `gcloud cli` with the right billing project.
 * **(Optional) Go executable**. *IF* you intend to run from this source code.
 * **Docker executable**. *IF* you are running the pre-build docker image.
-* **(Optional) Repository access token**. *IF* you intend tp clone and run from this source code locally, `you will need to request a access token to a private github/lorioux/kitabus repository (at least for now)`. *NOT Applied* IF you run the a pre-build docker image.
+* **(Optional) Repository access token**. *IF* you intend to clone and run from this source code locally, `you will need to request the access token to a private github/lorioux/kitabus repository (at least for now)`. * **NOT Applied IF** * you run the pre-build docker image.
 
 
 ### Example running from source code 
@@ -129,51 +129,56 @@ go run . import state --workdir "."
 ```
 
 ### Example using pre-build docker image
-
 ```bash
 # Set the Environment variable to run the REMARKER 
 export SCOPE="organizations/$(gcloud organizations list --filter 'display_name ~ xxxx' --format 'value(ID)')"
-export KIND=".*Instance"
-export WORKDIR="./:/dataplane"
+export KIND=".*Project,.*Subnetwork,compute.*Route" # (Opt) set a filter (use preffix .*) or unset it to retrieve everything. 
+export WORKDIR="./:/dataplane:rw"                   # map the current dir into container work dir 
 ```
-
 ```bash
-# Run docker image as interactive command-line interface
-export GCLOUD_AUTH_CMD='gcloud auth login --project $PROJECT_ID --account $GCLOUD_UACC'
-export GCLOUD_UACC='<GOOGLE_CLOUD_USER_ACCOUNT>'
-export REMARKER_IMAGE=<docker.io/devopsxpro/remarker:latest>
+# Pull the docker image
+docker pull docker.io/devopsxpro/remarker:latest
+```
+```bash
 export REMARKER_CMD=docker run -v $WORKDIR -u 0 --rm $REMARKER_IMAGE  # OR
-# docker run --rm -v $WORKDIR \
-# -e GCLOUD_UACC="${GCLOUD_UACC}" \
-# -e KIND="${KIND}" \
-# -e SCOPE="${SCOPE}" \
-# -e PROJECT_ID="${PROJECT_ID}" \
-# -e GCLOUD_AUTH_CMD="${GCLOUD_AUTH_CMD}" \
-# -e REMARKER_CMD="${REMARKER_CMD}" ${REMARKER_IMAGE}:latest
+```
+```bash
+export REMARK_CMD="auto"                            # run it in auto mode
+export IDENTITY="<domain>"                          # (Opt) CX Cloud Identity domain
+export REMARKER_IMAGE="devopsxpro/remarker:latest"     
 ```
 
+
 ```bash
-# Run this in auto mode
-# export REMARKER_CMD='remarkctl auto --override --scope $SCOPE'
-# eval $REMARKER_CMD --kind $KIND
-# OR
-# COPY the binary into your local environment and run
-docker run -v $WORKDIR -u 0 --rm -it $REMARKER_IMAGE  
-cp /usr/bin/remarkctl . && exit
-# 
-# Execute locally
-# remarkctl auto --scope $SCOPE --kind $KIND
+# Run 
+docker run --rm -v $WORKDIR $REMARKER_IMAGE $REMARK_CMD --scope $SCOPE --kind $KIND -I $IDENTITY
 ```
 
 ## SIDE-BY-SIDE SAMPLE OUTPUTS AT A GLANCE
+The outcome from the comparison is this:
+```bash
+1) running remarkctl in auto mode you will get a simple directory three AS-IS your resource hierarchy and states are kept at resource parent node level. 
+However, as per this version a few of  TF imports are not supported through remarkctl auto mode. Also some TF resource type templates are still not supported.
+The process will run until the end and provide a list of failed TF import that you can handle manually. Example
+|---Organization Domain
+|     |---Folder Name
+|           |---Project Name
+|                 |--Service Type (e.g. Compute)
+|                      |---[Subnework, VPC, Route, ...]
+|                 |--Terraform States
+
+2) running gcloud beta resource-config bulk-export, you will have: 
+    a) multiple layers of resource IDs and then you need to figureout in which layer the terraform_import*.sh. will be appointing to run terraform import ..., b) do some workarounds.
+```
 ### Running the Remark CTL
 ```bash
 # Example output structure - IF I run
-remarkctl auto --scope $SCOPE --kind compute.*Subnetwork #OR
-# eval $REMARKER_CMD --kind compute.*Subnetwork
+# docker run --rm -v $WORKDIR $REMARKER_IMAGE $REMARK_CMD --scope $SCOPE --kind $KIND -I $IDENTITY
+#OR
+# remarkctl auto --scope $SCOPE --kind compute.*Subnetwork -I $IDENTITY
 ---
 
-cloudxaxasxs.yyyyyy.zzz                         # Cloud Identity AS-IS
+cloudxaxasxs.yyyyyy.zzz                         # Cloud Identity domain AS-IS
 ├── Infrastructure                              # Folder in the GCP org    
 │   └── Development                             # Folder in the GCP org   
 │       └── xxxxx-dev-net-spoke-yyyyyy          # Project in the GCP org   
