@@ -188,7 +188,7 @@ cloudxaxasxs.yyyyyy.zzz                         # Cloud Identity domain AS-IS
 ├── Onboarding Host Project
 │   └── .ACTIVE
 │       ├── .BASE                               # Container for resource specific base inputs
-│       │   └── .subnetwork                     # Subnetwork resource attributes inputs. ANY change here an force change of the respective resource.
+│       │   └── .subnetwork                     # Subnetwork resources' inputs. ANY change here force change on the respective resource.
 │       ├── compute                             # Compute module
 │       │   └── Subnetwork.tf                   # Subnetwork TF resource definition
 │       ├── compute_module.tf                   # Compute resources module definition
