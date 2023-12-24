@@ -155,22 +155,22 @@ docker run --rm -v $WORKDIR $REMARKER_IMAGE $REMARK_CMD --scope $SCOPE --kind $K
 ```
 
 ## SIDE-BY-SIDE SAMPLE OUTPUTS AT A GLANCE
-The outcome from the comparison is this:
+The outcome from the comparison is:
 ```bash
 1) running remarkctl in auto mode you will get a simple directory three AS-IS your resource hierarchy and states are kept at resource parent node level. 
 However, as per this version a few of  TF imports are not supported through remarkctl auto mode. Also some TF resource type templates are still not supported.
 The process will run until the end and provide a list of failed TF import that you can handle manually. Example
 |---Organization Domain
-|     |---Folder Name
-|           |---Project Name
-|                 |--Service Type (e.g. Compute)
-|                      |---[Subnework, VPC, Route, ...]
-|                 |--Terraform States
+|   |---Folder Name
+|       |---Project Name
+|           |--Service Type (e.g. Compute)
+|              |---[Subnework.tf, VPC.tf, Route.tf, ...]
+|           |--Terraform States
 
 2) running gcloud beta resource-config bulk-export, you will have: 
     a) multiple layers of resource IDs and then you need to figureout in which layer the terraform_import*.sh. will be appointing to run terraform import ..., b) do some workarounds.
 ```
-### Running the Remark CTL
+### Running `Remark CTL`
 ```bash
 # Example output structure - IF I run
 # docker run --rm -v $WORKDIR $REMARKER_IMAGE $REMARK_CMD --scope $SCOPE --kind $KIND -I $IDENTITY
