@@ -75,7 +75,7 @@ There are two ways you can use this tool, either by cloning this repository and 
     1. `roles/resourcemanager.organizationViewer`
     1. `roles/cloudasset.viewer`
     1. (*Other*) `roles/ANY_ROLE_AS_REQUIRED_WHEN_RUNNING_THIS_TOOL_AT_THE_FIRST_TIME`
-    1. **IF** you want update a *`Terraform`* managed resource, please ensure your have the right permissions.
+    1. **IF** you want to update a *`Terraform`* managed resource, please ensure your have the right permissions.
 * **(Optional) Terraform executable**. *IF* you intend to run from the source code, please ensure you have the latest `terraform binary` installed.
 * **Google Cloud SDK**. *IF* you are running locally please install the google cloud sdk and ensure you are authenticated. Also, you will need to config your `gcloud cli` with the right billing project.
 * **Enable Cloud Asset API**. Run `gcloud services enable cloudasset.googleapis.com`
